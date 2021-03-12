@@ -1,4 +1,4 @@
-import { take, takeEvery, delay, put } from 'redux-saga/effects';
+import { take, takeEvery, delay, put, takeLatest } from 'redux-saga/effects';
 
 export function* onIncrement() {
   yield console.log('I am incremented');
@@ -7,5 +7,5 @@ export function* onIncrement() {
 }
 
 export function* incrementSaga() {
-  yield takeEvery('INCREMENT', onIncrement);
+  yield takeLatest('INCREMENT', onIncrement);
 }
